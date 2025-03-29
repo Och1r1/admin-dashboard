@@ -11,6 +11,9 @@ importers:
       '@neondatabase/serverless':
         specifier: ^0.9.5
         version: 0.9.5
+      '@prisma/client':
+        specifier: 6.5.0
+        version: 6.5.0(prisma@6.5.0(typescript@5.7.2))(typescript@5.7.2)
       '@radix-ui/react-dialog':
         specifier: ^1.1.4
         version: 1.1.4(@types/react-dom@19.0.0)(@types/react@19.0.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -52,10 +55,10 @@ importers:
         version: 0.22.8
       drizzle-orm:
         specifier: ^0.31.4
-        version: 0.31.4(@neondatabase/serverless@0.9.5)(@types/pg@8.11.6)(@types/react@19.0.0)(react@19.0.0)
+        version: 0.31.4(@neondatabase/serverless@0.9.5)(@prisma/client@6.5.0(prisma@6.5.0(typescript@5.7.2))(typescript@5.7.2))(@types/pg@8.11.6)(@types/react@19.0.0)(prisma@6.5.0(typescript@5.7.2))(react@19.0.0)
       drizzle-zod:
         specifier: ^0.5.1
-        version: 0.5.1(drizzle-orm@0.31.4(@neondatabase/serverless@0.9.5)(@types/pg@8.11.6)(@types/react@19.0.0)(react@19.0.0))(zod@3.24.1)
+        version: 0.5.1(drizzle-orm@0.31.4(@neondatabase/serverless@0.9.5)(@prisma/client@6.5.0(prisma@6.5.0(typescript@5.7.2))(typescript@5.7.2))(@types/pg@8.11.6)(@types/react@19.0.0)(prisma@6.5.0(typescript@5.7.2))(react@19.0.0))(zod@3.24.1)
       lucide-react:
         specifier: ^0.400.0
         version: 0.400.0(react@19.0.0)
@@ -98,6 +101,10 @@ importers:
       zod:
         specifier: ^3.24.1
         version: 3.24.1
+    devDependencies:
+      prisma:
+        specifier: 6.5.0
+        version: 6.5.0(typescript@5.7.2)
 
 packages:
 
@@ -614,6 +621,36 @@ packages:
   '@pkgjs/parseargs@0.11.0':
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
     engines: {node: '>=14'}
+
+  '@prisma/client@6.5.0':
+    resolution: {integrity: sha512-M6w1Ql/BeiGoZmhMdAZUXHu5sz5HubyVcKukbLs3l0ELcQb8hTUJxtGEChhv4SVJ0QJlwtLnwOLgIRQhpsm9dw==}
+    engines: {node: '>=18.18'}
+    peerDependencies:
+      prisma: '*'
+      typescript: '>=5.1.0'
+    peerDependenciesMeta:
+      prisma:
+        optional: true
+      typescript:
+        optional: true
+
+  '@prisma/config@6.5.0':
+    resolution: {integrity: sha512-sOH/2Go9Zer67DNFLZk6pYOHj+rumSb0VILgltkoxOjYnlLqUpHPAN826vnx8HigqnOCxj9LRhT6U7uLiIIWgw==}
+
+  '@prisma/debug@6.5.0':
+    resolution: {integrity: sha512-fc/nusYBlJMzDmDepdUtH9aBsJrda2JNErP9AzuHbgUEQY0/9zQYZdNlXmKoIWENtio+qarPNe/+DQtrX5kMcQ==}
+
+  '@prisma/engines-version@6.5.0-73.173f8d54f8d52e692c7e27e72a88314ec7aeff60':
+    resolution: {integrity: sha512-iK3EmiVGFDCmXjSpdsKGNqy9hOdLnvYBrJB61far/oP03hlIxrb04OWmDjNTwtmZ3UZdA5MCvI+f+3k2jPTflQ==}
+
+  '@prisma/engines@6.5.0':
+    resolution: {integrity: sha512-FVPQYHgOllJklN9DUyujXvh3hFJCY0NX86sDmBErLvoZjy2OXGiZ5FNf3J/C4/RZZmCypZBYpBKEhx7b7rEsdw==}
+
+  '@prisma/fetch-engine@6.5.0':
+    resolution: {integrity: sha512-3LhYA+FXP6pqY8FLHCjewyE8pGXXJ7BxZw2rhPq+CZAhvflVzq4K8Qly3OrmOkn6wGlz79nyLQdknyCG2HBTuA==}
+
+  '@prisma/get-platform@6.5.0':
+    resolution: {integrity: sha512-xYcvyJwNMg2eDptBYFqFLUCfgi+wZLcj6HDMsj0Qw0irvauG4IKmkbywnqwok0B+k+W+p+jThM2DKTSmoPCkzw==}
 
   '@radix-ui/primitive@1.1.1':
     resolution: {integrity: sha512-SJ31y+Q/zAyShtXJc8x83i9TYdbAfHZ++tUZnvjJJqFjzsdUnKsxPL6IEtBlxKkU7yzer//GQtZSV4GbldL3YA==}
@@ -1565,6 +1602,16 @@ packages:
   pretty-format@3.8.0:
     resolution: {integrity: sha512-WuxUnVtlWL1OfZFQFuqvnvs6MiAGk9UNsBostyBOB0Is9wb5uRESevA6rnl/rkksXaGX3GzZhPup5d6Vp1nFew==}
 
+  prisma@6.5.0:
+    resolution: {integrity: sha512-yUGXmWqv5F4PByMSNbYFxke/WbnyTLjnJ5bKr8fLkcnY7U5rU9rUTh/+Fja+gOrRxEgtCbCtca94IeITj4j/pg==}
+    engines: {node: '>=18.18'}
+    hasBin: true
+    peerDependencies:
+      typescript: '>=5.1.0'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+
   prop-types@15.8.1:
     resolution: {integrity: sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==}
 
@@ -2135,6 +2182,39 @@ snapshots:
   '@pkgjs/parseargs@0.11.0':
     optional: true
 
+  '@prisma/client@6.5.0(prisma@6.5.0(typescript@5.7.2))(typescript@5.7.2)':
+    optionalDependencies:
+      prisma: 6.5.0(typescript@5.7.2)
+      typescript: 5.7.2
+
+  '@prisma/config@6.5.0':
+    dependencies:
+      esbuild: 0.19.12
+      esbuild-register: 3.6.0(esbuild@0.19.12)
+    transitivePeerDependencies:
+      - supports-color
+
+  '@prisma/debug@6.5.0': {}
+
+  '@prisma/engines-version@6.5.0-73.173f8d54f8d52e692c7e27e72a88314ec7aeff60': {}
+
+  '@prisma/engines@6.5.0':
+    dependencies:
+      '@prisma/debug': 6.5.0
+      '@prisma/engines-version': 6.5.0-73.173f8d54f8d52e692c7e27e72a88314ec7aeff60
+      '@prisma/fetch-engine': 6.5.0
+      '@prisma/get-platform': 6.5.0
+
+  '@prisma/fetch-engine@6.5.0':
+    dependencies:
+      '@prisma/debug': 6.5.0
+      '@prisma/engines-version': 6.5.0-73.173f8d54f8d52e692c7e27e72a88314ec7aeff60
+      '@prisma/get-platform': 6.5.0
+
+  '@prisma/get-platform@6.5.0':
+    dependencies:
+      '@prisma/debug': 6.5.0
+
   '@radix-ui/primitive@1.1.1': {}
 
   '@radix-ui/react-arrow@1.1.1(@types/react-dom@19.0.0)(@types/react@19.0.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
@@ -2600,16 +2680,18 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  drizzle-orm@0.31.4(@neondatabase/serverless@0.9.5)(@types/pg@8.11.6)(@types/react@19.0.0)(react@19.0.0):
+  drizzle-orm@0.31.4(@neondatabase/serverless@0.9.5)(@prisma/client@6.5.0(prisma@6.5.0(typescript@5.7.2))(typescript@5.7.2))(@types/pg@8.11.6)(@types/react@19.0.0)(prisma@6.5.0(typescript@5.7.2))(react@19.0.0):
     optionalDependencies:
       '@neondatabase/serverless': 0.9.5
+      '@prisma/client': 6.5.0(prisma@6.5.0(typescript@5.7.2))(typescript@5.7.2)
       '@types/pg': 8.11.6
       '@types/react': 19.0.0
+      prisma: 6.5.0(typescript@5.7.2)
       react: 19.0.0
 
-  drizzle-zod@0.5.1(drizzle-orm@0.31.4(@neondatabase/serverless@0.9.5)(@types/pg@8.11.6)(@types/react@19.0.0)(react@19.0.0))(zod@3.24.1):
+  drizzle-zod@0.5.1(drizzle-orm@0.31.4(@neondatabase/serverless@0.9.5)(@prisma/client@6.5.0(prisma@6.5.0(typescript@5.7.2))(typescript@5.7.2))(@types/pg@8.11.6)(@types/react@19.0.0)(prisma@6.5.0(typescript@5.7.2))(react@19.0.0))(zod@3.24.1):
     dependencies:
-      drizzle-orm: 0.31.4(@neondatabase/serverless@0.9.5)(@types/pg@8.11.6)(@types/react@19.0.0)(react@19.0.0)
+      drizzle-orm: 0.31.4(@neondatabase/serverless@0.9.5)(@prisma/client@6.5.0(prisma@6.5.0(typescript@5.7.2))(typescript@5.7.2))(@types/pg@8.11.6)(@types/react@19.0.0)(prisma@6.5.0(typescript@5.7.2))(react@19.0.0)
       zod: 3.24.1
 
   eastasianwidth@0.2.0: {}
@@ -2952,6 +3034,16 @@ snapshots:
   prettier@3.4.2: {}
 
   pretty-format@3.8.0: {}
+
+  prisma@6.5.0(typescript@5.7.2):
+    dependencies:
+      '@prisma/config': 6.5.0
+      '@prisma/engines': 6.5.0
+    optionalDependencies:
+      fsevents: 2.3.3
+      typescript: 5.7.2
+    transitivePeerDependencies:
+      - supports-color
 
   prop-types@15.8.1:
     dependencies:
